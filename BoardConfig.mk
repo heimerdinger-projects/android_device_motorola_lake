@@ -14,13 +14,10 @@
 # limitations under the License.
 #
 
-# Must set these before including common config
+# Inherit from motorola sdm660-common
+# This flag needs to be set first
 BOARD_USES_KEYMASTER_4 := true
-TARGET_BOARD_PLATFORM := sdm660
-TARGET_BOOTLOADER_BOARD_NAME := SDM660
-
-# Inherit from motorola msm8998-common
-include device/motorola/msm8998-common/BoardConfigCommon.mk
+-include device/motorola/sdm660-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/motorola/lake
 
@@ -40,14 +37,16 @@ TARGET_OTA_ASSERT_DEVICE := lake,lake_n
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+# Init
+SOONG_CONFIG_NAMESPACES += MOTOROLA_SDM660_INIT
+SOONG_CONFIG_MOTOROLA_SDM660_INIT := DEVICE_LIB
+SOONG_CONFIG_MOTOROLA_SDM660_INIT_DEVICE_LIB := //$(DEVICE_PATH):libinit_lake
+
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
-
-# HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/lake_manifest.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
