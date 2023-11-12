@@ -22,11 +22,11 @@ AB_OTA_PARTITIONS += \
 TARGET_BOARD_INFO_FILE := device/motorola/lake/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := lake,lake_n
 
-# This flag needs to be set first
-BOARD_USES_KEYMASTER_4 := true
-
 # Display
 TARGET_SCREEN_DENSITY := 420
+
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/lake_manifest.xml
 
 # Init
 SOONG_CONFIG_NAMESPACES += MOTOROLA_SDM660_INIT
