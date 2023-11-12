@@ -1,25 +1,13 @@
 #
 # Copyright (C) 2017 The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# SPDX-License-Identifier: Apache-2.0
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-# Inherit from motorola sdm660-common
-# This flag needs to be set first
-BOARD_USES_KEYMASTER_4 := true
--include device/motorola/sdm660-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/motorola/lake
+
+# Inherit from motorola sdm660-common
+-include device/motorola/sdm660-common/BoardConfigCommon.mk
 
 # A/B updater
 AB_OTA_UPDATER := true
@@ -34,6 +22,9 @@ AB_OTA_PARTITIONS += \
 TARGET_BOARD_INFO_FILE := device/motorola/lake/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := lake,lake_n
 
+# This flag needs to be set first
+BOARD_USES_KEYMASTER_4 := true
+
 # Display
 TARGET_SCREEN_DENSITY := 420
 
@@ -46,7 +37,7 @@ SOONG_CONFIG_MOTOROLA_SDM660_INIT_DEVICE_LIB := //$(DEVICE_PATH):libinit_lake
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_CONFIG := lineageos_lake_defconfig
+TARGET_KERNEL_CONFIG := lake_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
