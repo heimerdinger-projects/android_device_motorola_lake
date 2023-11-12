@@ -14,7 +14,7 @@ persist.vendor.audio.default.spkrdc=9929
 persist.vendor.audio.default.rcvrdc=11243
 
 # Bluetooth
-bluetooth.device.default_name=moto g(7) plus
+bluetooth.device.default_name=Moto G7 Plus
 
 # Fluence
 persist.vendor.audio.dualmic.config=endfire

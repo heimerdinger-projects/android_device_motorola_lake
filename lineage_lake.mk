@@ -18,9 +18,9 @@ $(call inherit-product, device/motorola/lake/device.mk)
 # Device identifiers
 PRODUCT_DEVICE := lake
 PRODUCT_NAME := lineage_lake
-PRODUCT_BRAND := motorola
-PRODUCT_MODEL := moto g(7) plus
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_BRAND := Motorola
+PRODUCT_MODEL := Moto G7 Plus
+PRODUCT_MANUFACTURER := Motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=lake_retail \
